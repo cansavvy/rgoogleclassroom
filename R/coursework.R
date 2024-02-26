@@ -174,7 +174,9 @@ delete_coursework <- function(course_id, coursework_id) {
   assert_that(is.string(coursework_id))
 
   # Get endpoint url
-  url <- get_endpoint("classroom.endpoint.coursework", course_id, coursework_id)
+  url <- get_endpoint("classroom.endpoint.coursework",
+                      course_id = course_id,
+                      coursework_id = coursework_id)
 
   # Get auth token
   token <- get_token()
@@ -184,8 +186,8 @@ delete_coursework <- function(course_id, coursework_id) {
   result <- httr::DELETE(url, config = config, accept_json())
 
   if (httr::status_code(result) != 200) {
-    message("Failed to delete course - was it archived first?")
-    return(result_list)
+    message("Failed to delete coursework")
+    return(result)
   }
 
   # Process and return results

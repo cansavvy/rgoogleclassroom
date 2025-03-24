@@ -1,5 +1,5 @@
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
+0 errors | 0 warnings | 0 note
 
-* This is an update to address a minor bug
+* Remove ottrpal dependency

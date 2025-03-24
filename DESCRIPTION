@@ -1,6 +1,6 @@
 Package: rgoogleclassroom
 Title: API Wrapper for Google Classroom and Google Forms
-Version: 0.9.1
+Version: 1.0.0
 Authors@R:
     person("Candace", "Savonen", , "csavonen@fredhutch.org", role = c("cre", "aut"))
 Description: This is a Google Forms and Google Classroom API Wrapper for R for managing Google Classrooms from R. The documentation for these APIs is here <https://developers.google.com/forms/api/guides> .
@@ -8,8 +8,6 @@ License: GPL-3
 URL: https://github.com/datatrail-jhu/rgoogleclassroom
 BugReports: https://github.com/datatrail-jhu/rgoogleclassroom/issues
 Imports:
-    attempt,
-    curl,
     httr,
     jsonlite,
     purrr,
@@ -18,13 +16,17 @@ Imports:
     lubridate,
     magrittr,
     openssl,
-    ottrpal,
     stringr,
     dplyr,
-    knitr,
+    R.utils,
+    readr,
+    rprojroot,
+    tibble, 
+    tidyr
 Encoding: UTF-8
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Suggests:
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0), 
+    knitr
 Config/testthat/edition: 3
 VignetteBuilder: knitr

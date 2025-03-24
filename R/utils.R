@@ -1,6 +1,21 @@
+#' Pipe operator
+#'
+#' See \code{magrittr::\link[magrittr:pipe]{\%>\%}} for details.
+#'
+#' @name %>%
+#' @rdname pipe
+#' @keywords internal
+#' @export
+#' @importFrom magrittr %>%
+#' @usage lhs \%>\% rhs
+#' @param lhs A value or the magrittr placeholder.
+#' @param rhs A function call using the magrittr semantics.
+#' @return The result of calling `rhs(lhs)`.
+NULL
+
 utils::globalVariables(c(
   "link", "point_value", "formatted_df", "form_info", "all_answers", "question",
-  "type", "original", "trimmed", "shuffle_opt", "index"
+  "type", "original", "trimmed", "shuffle_opt", "index", "quiz_path"
 ))
 
 #' Generate endpoint for the Google classroom API

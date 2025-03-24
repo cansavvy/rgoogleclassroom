@@ -7,7 +7,7 @@
 #' @param quiz_path The file path to a Markua formatted quiz to be translated to Google Forms API format
 #' @param output_path Optional file path to save the formatted data to a JSON file
 #' @importFrom magrittr %>%
-#' @return A list of the output from [ottrpal::check_question] with messages/warnings regarding each question and each check.
+#' @return A list of the output from check_question with messages/warnings regarding each question and each check.
 #' @export
 #' @examples \dontrun{
 #'
@@ -28,7 +28,7 @@ translate_questions_api <- function(quiz_path, output_path = NULL) {
   }
 
   # Read in the quiz file
-  quiz_specs <- ottrpal::parse_quiz(readLines(quiz_path))
+  quiz_specs <- parse_quiz(readLines(quiz_path))
 
   # Remove header part and split into per question data frames
   question_dfs <- quiz_specs$data %>%
@@ -270,3 +270,33 @@ ottr_quiz_to_google <- function(quiz_path = NULL,
   return(result)
 }
 
+#' Path to good example quiz
+#'
+#' @export
+#' @return The file path to an example good quiz included in the package that should pass the quiz checks.
+#'
+good_quiz_path <- function() {
+  list.files(
+    pattern = "quiz_good.md$",
+    recursive = TRUE,
+    system.file("extdata", package = "ottrpal"),
+    full.names = TRUE
+  )
+}
+
+#' Path to bad example quiz
+#'
+#' @export
+#' @return The file path to an example bad quiz included in the package that will fail the quiz checks.
+#'
+#' @examples
+#'
+#' quiz_path <- bad_quiz_path()
+bad_quiz_path <- function() {
+  list.files(
+    pattern = "quiz_bad.md$",
+    recursive = TRUE,
+    system.file("extdata", package = "ottrpal"),
+    full.names = TRUE
+  )
+}

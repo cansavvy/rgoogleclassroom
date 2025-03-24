@@ -61,9 +61,9 @@ classroom_scopes_list <- paste0(
 
 #' Authorize R package to access Google classroom API
 #' @description This is a function to authorize the R package to access the Googleclassroom API interactively.
-#' @param token an output from \code{\link{oauth2.0_token}} to set as the authentication token.
+#' @param token an output from oauth2.0_token to set as the authentication token.
 #' @param cache Should the token be cached as an .httr-oauth file?
-#' @param ... additional arguments to send to \code{\link{oauth2.0_token}}
+#' @param ... additional arguments to send to oauth2.0_token
 #' @return OAuth token saved to the environment so the package can use the users' Google data
 #' @importFrom utils menu installed.packages
 #' @importFrom httr oauth_app oauth_endpoints oauth2.0_token
